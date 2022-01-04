@@ -1,0 +1,69 @@
+﻿@model ECommerce.BLL.Models.productVModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pd-20 card-box mb-30">
+    <div class="clearfix">
+        <div class="pull-left">
+            <h4 class="text-blue h4">Create Product</h4>
+            <br />
+        </div>
+    </div>
+    <form asp-action="Create" asp-controller="Product">
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Name of Product</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="name">
+                <span asp-validation-for="name" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="price" class="col-sm-12 col-md-2 col-form-label">Price of Product</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="price">
+                <span asp-validation-for="price" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Size of Product</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="size">
+                <span asp-validation-for="size" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Color of Product</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="color">
+                <span asp-validation-for="color" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Quantity</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="quantity">
+                <span asp-validation-for="quantity" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Discription</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="description">
+                <span asp-validation-for="description" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Product for User</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="productUser">
+                <span asp-validation-for="productUser" class="alert-danger"></span>
+            </div>
+        </div>
+        <hr />
+        <button type="submit" class="btn btn-success pull-right">Add Product</button>
+        <button type="reset" class="btn btn-info pull-right">Cancel</button>
+    </form>
+</div>
+
