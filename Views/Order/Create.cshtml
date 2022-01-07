@@ -1,0 +1,32 @@
+﻿@model ECommerce.BLL.Models.OrderVModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+<form asp-action="create" asp-controller="Order">
+    <input type="hidden" asp-for="id" />
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Enter Order Time</label>
+            <input class="form-control m-2" asp-for="orderTime" style="width: 100%;" />
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Select Customer</label>
+            <select asp-for="customerId" asp-items="ViewBag.cst" class="custom-select2 form-control" style="width: 100%;">
+                <option value="default" disabled> Choose Customer</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Select Product</label>
+            <select asp-for="productsId" class="custom-select2 form-control" multiple="multiple" style="width: 100%;" asp-items="ViewBag.prod">
+            </select>
+        </div>
+    </div>
+    <button type="submit">Add Order</button>
+</form>

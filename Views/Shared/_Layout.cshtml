@@ -269,6 +269,8 @@
                         </a>
                         <ul class="submenu">
                             <li><a asp-action="Index" asp-controller="Product">All Products</a></li>
+                            <li><a asp-action="Index" asp-controller="Order">All Orders</a></li>
+                            <li><a asp-action="Index" asp-controller="Customer">All Customers</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -295,5 +297,6 @@
     <script src="~/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
     <script src="~/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
     <script src="~/vendors/scripts/dashboard.js"></script>
+     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

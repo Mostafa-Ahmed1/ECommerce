@@ -1,0 +1,40 @@
+﻿@model ECommerce.BLL.Models.CustomerVModel
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pd-20 card-box mb-30">
+    <div class="clearfix">
+        <div class="pull-left">
+            <h4 class="text-blue h4">Edit Customer</h4>
+        </div>
+    </div>
+    <form asp-action="Edit" asp-controller="Customer">
+        <input type="hidden" asp-for="id" />
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Name of Customer</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="name">
+                <span asp-validation-for="name" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="address" class="col-sm-12 col-md-2 col-form-label">Address of Customer</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="address">
+                <span asp-validation-for="address" class="alert-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-12 col-md-2 col-form-label">Phone of Customer</label>
+            <div class="col-sm-12 col-md-10">
+                <input class="form-control" type="text" asp-for="phone">
+                <span asp-validation-for="phone" class="alert-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a asp-action="Index" class="btn btn-info">Cancel</a>
+    </form>
+</div>
+

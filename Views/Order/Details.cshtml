@@ -1,0 +1,38 @@
+﻿@model ECommerce.BLL.Models.OrderVModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="min-height-200px">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="title">
+                    <h4>Order Details</h4>
+                </div>
+                <nav aria-label="breadcrumb" role="navigation">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Order Details</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <h1>Customer Details</h1>
+    <h4>@Model.Customer.name</h4>
+    <h4>@Model.Customer.phone</h4>
+    <h4>@Model.Customer.address</h4>
+    <h1>Product Details</h1>
+    @foreach (var item in @Model.orderProducts)
+    {
+        <h4>@item.product.name</h4>
+        <h4>@item.product.quantity</h4>
+        <h4>@item.product.price</h4>
+    }
+    <h4>@Model.orderTime</h4>
+</div>

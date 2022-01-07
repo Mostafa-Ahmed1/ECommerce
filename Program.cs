@@ -13,6 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContextPool<ProductContext>(opts => opts.UseSqlServer(builder.Configuration.GetConnectionString("ConnecStr")));
 // config for dependecies
 builder.Services.AddScoped<IproductRep, ProductRep>();
+builder.Services.AddScoped<IorderRep, OrderRep>();
+builder.Services.AddScoped<IorderProductRep, OrderProductRep>();
+builder.Services.AddScoped<IcustomerRep, CustomerRep>();
 //auto mapper
 builder.Services.AddAutoMapper(x => x.AddProfile(new DomainProfile()));
 

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "InStock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>InStock</h1>
+<select class="form-control" asp-items="ViewBag.prod" id="PrdId" >
+    <option disabled selected hidden >Choose Customer</option>
+</select>
+<div id="Value" >
+</div>
+
+
+@section Scripts{
+    <script>
+
+   $("#PrdId").change(function(){
+       var PrdId = $("#PrdId").val();
+       $("#Value").empty();
+       $.ajax({
+           type:"POST",
+           url:"/Product/InStock",
+           data:{id:PrdId},
+           success:function(res){
+                   $("#Value").append("<h4>" +res+ "</h4>");
+           }
+       });
+   });
+</script>
+}
+
+

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "CheckProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CheckProducts</h1>
+<select class="form-control" asp-items="ViewBag.Cst" id="CstId" >
+    <option disabled selected hidden >Choose Customer</option>
+</select>
+<div id="Value" >
+</div>
+
+
+@section Scripts{
+    <script>
+
+   $("#CstId").change(function(){
+       var CstId = $("#CstId").val();
+       $("#Value").empty();
+       $.ajax({
+           type:"POST",
+           url:"/Customer/CheckProducts",
+           data:{id:CstId},
+           success:function(res){
+
+               $.each(res, function(i,e){
+                   $("#Value").append("<h4>" +e.name+ "</h4>");
+
+               })
+           }
+       });
+   });
+</script>
+}
+
